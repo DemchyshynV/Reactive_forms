@@ -1,0 +1,10 @@
+<form [formGroup]="form" (change)="getPost(form)">
+  <select formControlName="choice">
+    <option *ngFor="let user of users" [value]="user.id">
+      {{user.name}}
+    </option>
+  </select>
+  <button (click)="getUserInfo(form)">Get</button>
+</form>
+<div *ngIf="user">{{user|json}}</div>
+<router-outlet></router-outlet>
